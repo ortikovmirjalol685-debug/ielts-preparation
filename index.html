@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101310">
+<title>IELTS PRO — Preparation Platform</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+
+<aside class="sidebar" id="sidebar">
+  <div class="brand">
+    <div class="brand-icon">I</div>
+    <div><h2>IELTS<span>PRO</span></h2><small>PREPARATION PLATFORM</small></div>
+  </div>
+
+  <div class="nav-label">MAIN MENU</div>
+  <nav>
+    <button class="nav-item active" data-page="dashboard">⌂ <span>Dashboard</span></button>
+    <button class="nav-item" data-page="listening">♫ <span>Listening</span></button>
+    <button class="nav-item" data-page="reading">▤ <span>Reading</span></button>
+    <button class="nav-item" data-page="writing">✎ <span>Writing</span></button>
+    <button class="nav-item" data-page="speaking">◉ <span>Speaking</span></button>
+  </nav>
+
+  <div class="nav-label">LEARNING TOOLS</div>
+  <nav>
+    <button class="nav-item" data-page="vocabulary">▣ <span>Vocabulary</span></button>
+    <button class="nav-item" data-page="grammar">文 <span>Grammar Academy</span></button>
+    <button class="nav-item" data-page="mock">◷ <span>Mock Test & Band</span></button>
+    <button class="nav-item" data-page="focus">◎ <span>Focus Timer</span></button>
+    <button class="nav-item" data-page="progress">↗ <span>My Progress</span></button>
+  </nav>
+
+  <div class="sidebar-bottom">
+    <div class="target-card">
+      <span>✦ YOUR TARGET</span>
+      <strong>7.0+</strong>
+      <small>Consistent practice makes progress.</small>
+    </div>
+    <div class="profile">
+      <div class="avatar">M</div>
+      <div><b>IELTS Student</b><small>Personal workspace</small></div>
+    </div>
+  </div>
+</aside>
+
+<main class="main">
+<header class="topbar">
+  <button class="menu-toggle" id="menuToggle">☰</button>
+  <div>
+    <p class="eyebrow">YOUR LEARNING SPACE</p>
+    <h1 id="pageTitle">Dashboard</h1>
+  </div>
+  <div class="topbar-right">
+    <span class="date-chip" id="todayDate"></span>
+    <div class="avatar">M</div>
+  </div>
+</header>
+
+<div class="content">
+
+<!-- DASHBOARD -->
+<section class="page active" id="dashboard">
+  <div class="welcome-banner">
+    <div>
+      <p class="eyebrow">WELCOME TO IELTS PRO</p>
+      <h2>Build your future.<br><span>Achieve your IELTS goal.</span></h2>
+      <p class="muted">A complete workspace for your IELTS preparation.</p>
+      <button class="primary-btn" data-go="speaking">Start practicing →</button>
+    </div>
+    <div class="hero-art">
+      <div class="hero-score">7.0<span>+</span></div>
+      <small>YOUR TARGET BAND</small>
+    </div>
+  </div>
+
+  <div class="section-heading">
+    <div><p class="eyebrow">OVERVIEW</p><h2>Your preparation</h2></div>
+    <span class="live-label">● TRACKING ACTIVE</span>
+  </div>
+
+  <div class="stats-grid">
+    <div class="stat-card"><span>Words learned</span><strong id="dashWords">0</strong><small>Vocabulary progress</small></div>
+    <div class="stat-card"><span>Questions practised</span><strong id="dashQuestions">0</strong><small>Speaking roulette</small></div>
+    <div class="stat-card"><span>Tests completed</span><strong id="dashTests">0</strong><small>Listening & Reading</small></div>
+    <div class="stat-card"><span>Today's goals</span><strong id="dashGoals">0%</strong><small>Daily completion</small></div>
+  </div>
+
+  <div class="section-heading"><div><p class="eyebrow">FOUR IELTS SKILLS</p><h2>Choose a module</h2></div></div>
+
+  <div class="skills-grid">
+    <button class="skill-card" data-go="listening"><i>♫</i><b>Listening</b><small>Audio, questions and scoring</small><em>Open module →</em></button>
+    <button class="skill-card" data-go="reading"><i>▤</i><b>Reading</b><small>Academic passages and tests</small><em>Open module →</em></button>
+    <button class="skill-card" data-go="writing"><i>✎</i><b>Writing</b><small>Task 1 and Task 2 workspace</small><em>Open module →</em></button>
+    <button class="skill-card" data-go="speaking"><i>◉</i><b>Speaking</b><small>Animated random question roulette</small><em>Open module →</em></button>
+  </div>
+
+  <div class="bottom-grid">
+    <div class="panel">
+      <div class="panel-heading">
+        <div><p class="eyebrow">DAILY CHECKLIST</p><h3>Today's goals</h3></div>
+        <b id="goalCount">0/4</b>
+      </div>
+      <div class="goal-list">
+        <label><input type="checkbox" class="daily-goal"> Learn 20 vocabulary words</label>
+        <label><input type="checkbox" class="daily-goal"> Complete one Listening exercise</label>
+        <label><input type="checkbox" class="daily-goal"> Practise Speaking for 15 minutes</label>
+        <label><input type="checkbox" class="daily-goal"> Study one Grammar topic</label>
+      </div>
+    </div>
+    <div class="panel">
+      <p class="eyebrow">EXAM COUNTDOWN</p>
+      <h3>Time to prepare</h3>
+      <strong class="countdown" id="countdown">-- days</strong>
+      <p class="muted">Target date: 18 December 2026</p>
+      <div class="progress-track"><div id="deadlineProgress"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LISTENING -->
+<section class="page" id="listening">
+  <div class="page-intro">
+    <p class="eyebrow">IELTS LISTENING</p>
+    <h2>Listen carefully. Answer accurately.</h2>
+    <p class="muted">Four practice sections with browser-generated audio, questions and instant checking.</p>
+  </div>
+  <div class="panel">
+    <div class="toolbar">
+      <label>Choose section
+        <select id="listeningSection">
+          <option value="0">Section 1 — Everyday conversation</option>
+          <option value="1">Section 2 — Public information</option>
+          <option value="2">Section 3 — Academic discussion</option>
+          <option value="3">Section 4 — Academic lecture</option>
+        </select>
+      </label>
+      <span class="tag">Practice mode</span>
+    </div>
+    <div class="audio-box">
+      <div class="audio-icon">♫</div>
+      <div><b id="audioTitle">Section 1 audio</b><p class="muted" id="audioDescription">Listen to the recording before answering.</p></div>
+      <button class="primary-btn" id="playAudio">▶ Play audio</button>
+      <button class="secondary-btn" id="stopAudio">■ Stop</button>
+    </div>
+    <div class="notice">Audio uses your browser's English text-to-speech voice. For best results, select an English voice in your browser or device settings.</div>
+    <div id="listeningQuestions" class="question-list"></div>
+    <div class="action-row">
+      <button class="primary-btn" id="checkListening">Check answers</button>
+      <button class="secondary-btn" id="resetListening">Reset answers</button>
+      <span id="listeningResult" class="result"></span>
+    </div>
+  </div>
+</section>
+
+<!-- READING -->
+<section class="page" id="reading">
+  <div class="page-intro">
+    <p class="eyebrow">IELTS ACADEMIC READING</p>
+    <h2>Read smarter. Read faster.</h2>
+    <p class="muted">Practise comprehension, identify key information and check your answers.</p>
+  </div>
+  <div class="panel">
+    <div class="toolbar">
+      <label>Choose passage
+        <select id="readingPassage">
+          <option value="0">Passage 1 — Urban green spaces</option>
+          <option value="1">Passage 2 — The history of public libraries</option>
+          <option value="2">Passage 3 — Renewable energy storage</option>
+        </select>
+      </label>
+      <span class="tag">Timed practice</span>
+    </div>
+    <div class="reading-timer">
+      <b id="readingClock">60:00</b>
+      <button class="secondary-btn" id="readingTimerToggle">Start 60-minute timer</button>
+      <button class="secondary-btn" id="readingTimerReset">Reset</button>
+    </div>
+    <article class="reading-passage" id="readingText"></article>
+    <div class="section-heading"><div><p class="eyebrow">COMPREHENSION</p><h3>Answer the questions</h3></div></div>
+    <div id="readingQuestions" class="question-list"></div>
+    <div class="action-row">
+      <button class="primary-btn" id="checkReading">Check answers</button>
+      <button class="secondary-btn" id="resetReading">Reset answers</button>
+      <span id="readingResult" class="result"></span>
+    </div>
+  </div>
+</section>
+
+<!-- WRITING -->
+<section class="page" id="writing">
+  <div class="page-intro">
+    <p class="eyebrow">IELTS WRITING</p>
+    <h2>Write with purpose.</h2>
+    <p class="muted">Practise Academic Task 1 and Task 2. Your drafts are saved on this device.</p>
+  </div>
+  <div class="panel">
+    <div class="tabs">
+      <button class="tab active" data-task="1">Task 1</button>
+      <button class="tab" data-task="2">Task 2</button>
+    </div>
+    <div class="toolbar">
+      <div><p class="eyebrow" id="writingEyebrow">ACADEMIC REPORT</p><h3 id="writingTitle">Task 1 — Describe visual information</h3></div>
+      <span class="tag" id="writingTarget">150+ words</span>
+    </div>
+    <p class="muted" id="writingPrompt">The chart below shows changes in the use of three types of public transport in a city between 2010 and 2020. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.</p>
+    <textarea id="writingEditor" class="writing-editor" placeholder="Write your IELTS response here..."></textarea>
+    <div class="action-row">
+      <span id="writingWords" class="result">0 words</span>
+      <button class="secondary-btn" id="clearWriting">Clear</button>
+      <button class="primary-btn" id="saveWriting">Save draft</button>
+    </div>
+    <div class="criteria">
+      <b>Assessment criteria</b>
+      <div class="criteria-grid">
+        <span>Task Achievement / Response</span>
+        <span>Coherence and Cohesion</span>
+        <span>Lexical Resource</span>
+        <span>Grammatical Range and Accuracy</span>
+      </div>
+      <p class="muted">The website counts words and saves drafts; it does not provide an official IELTS examiner score.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SPEAKING -->
+<section class="page" id="speaking">
+  <div class="page-intro">
+    <p class="eyebrow">IELTS SPEAKING PRACTICE</p>
+    <h2>Speak with confidence.</h2>
+    <p class="muted">Spin the animated roulette to receive a random IELTS question.</p>
+  </div>
+  <div class="speaking-layout">
+    <div class="panel roulette-panel">
+      <div class="panel-heading">
+        <div><p class="eyebrow">QUESTION GENERATOR</p><h3>Speaking Roulette</h3></div>
+        <span class="tag">300 questions</span>
+      </div>
+      <div class="part-tabs">
+        <button class="part-tab active" data-part="1">PART 1<small>Interview</small></button>
+        <button class="part-tab" data-part="2">PART 2<small>Cue Card</small></button>
+        <button class="part-tab" data-part="3">PART 3<small>Discussion</small></button>
+      </div>
+      <div class="roulette-stage">
+        <div class="roulette-ring"></div>
+        <div class="roulette-card" id="rouletteCard">
+          <small id="questionLabel">PART 1 · INTERVIEW</small>
+          <h3 id="questionText">Ready to practise?</h3>
+          <p id="questionHint">Press spin to get a random question.</p>
+        </div>
+        <span class="spark spark1">✦</span><span class="spark spark2">✧</span>
+      </div>
+      <button class="spin-btn" id="spinBtn">⟳ SPIN THE ROULETTE</button>
+      <p class="muted center" id="rouletteNote">A new question is waiting for you.</p>
+    </div>
+
+    <div class="side-stack">
+      <div class="panel">
+        <p class="eyebrow">PART GUIDE</p>
+        <h3 id="partTitle">Part 1 — Interview</h3>
+        <p class="muted" id="partDescription">Questions about familiar topics.</p>
+        <div class="info-line"><span>Typical duration</span><b id="partDuration">4–5 minutes</b></div>
+        <div class="info-line"><span>Answer style</span><b id="partStyle">Short answers</b></div>
+      </div>
+      <div class="panel">
+        <p class="eyebrow">SPEAKING TIMER</p>
+        <div class="timer-display" id="speakingTimer">02:00</div>
+        <div class="action-row">
+          <button class="primary-btn" id="startSpeakingTimer">Start</button>
+          <button class="secondary-btn" id="resetSpeakingTimer">Reset</button>
+        </div>
+        <p class="muted">Part 2 gives you a two-minute speaking timer.</p>
+      </div>
+      <div class="panel">
+        <p class="eyebrow">YOUR ANSWER NOTES</p>
+        <textarea id="speakingAnswer" placeholder="Write your ideas or answer here..."></textarea>
+        <div class="action-row">
+          <span id="answerWords" class="muted">0 words</span>
+          <button class="text-btn" id="saveAnswer">Save answer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel history-panel">
+    <div class="panel-heading"><h3>Question history</h3><button class="text-btn" id="clearHistory">Clear history</button></div>
+    <div id="questionHistory" class="history-list"><p class="muted">Your questions will appear here.</p></div>
+  </div>
+</section>
+
+<!-- VOCABULARY -->
+<section class="page" id="vocabulary">
+  <div class="page-intro">
+    <p class="eyebrow">IELTS VOCABULARY LIBRARY</p>
+    <h2>Build a stronger vocabulary.</h2>
+    <p class="muted">600 IELTS words and phrases with Uzbek meanings, example sentences, topic filters and learning tracking.</p>
+  </div>
+  <div class="stats-grid compact-stats">
+    <div class="stat-card"><span>Total words</span><strong id="totalVocab">600</strong></div>
+    <div class="stat-card"><span>Learned</span><strong id="learnedVocab">0</strong></div>
+    <div class="stat-card"><span>Remaining</span><strong id="remainingVocab">600</strong></div>
+    <div class="stat-card"><span>Progress</span><strong id="vocabPercent">0%</strong></div>
+  </div>
+  <div class="vocab-toolbar">
+    <input type="search" id="vocabSearch" placeholder="Search English word, Uzbek meaning or example...">
+    <select id="vocabCategory"><option value="all">All topics</option></select>
+    <select id="vocabLevel">
+      <option value="all">All levels</option>
+      <option value="Intermediate">Intermediate</option>
+      <option value="Advanced">Advanced</option>
+    </select>
+    <select id="vocabStatus">
+      <option value="all">All words</option>
+      <option value="new">Not learned</option>
+      <option value="learned">Learned</option>
+    </select>
+  </div>
+  <p class="muted" id="vocabResults" aria-live="polite"></p>
+  <div class="vocab-grid" id="vocabGrid">
+    <div class="vocab-empty">Loading vocabulary…</div>
+  </div>
+</section>
+
+<!-- GRAMMAR -->
+<section class="page" id="grammar">
+  <div class="page-intro">
+    <p class="eyebrow">GRAMMAR ACADEMY</p>
+    <h2>Master your grammar.</h2>
+    <p class="muted">40 IELTS-focused lessons with clear explanations, structures, examples and quick exercises.</p>
+  </div>
+  <div class="grammar-layout">
+    <div class="grammar-grid" id="grammarGrid"></div>
+    <div class="panel grammar-detail" id="grammarDetail">
+      <p class="eyebrow">LESSON</p>
+      <h3>Select a grammar topic</h3>
+      <p class="muted">Choose one of the 40 topics to study its rule, formula, examples and exercise.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MOCK TEST -->
+<section class="page" id="mock">
+  <div class="page-intro">
+    <p class="eyebrow">MOCK TEST & BAND CALCULATOR</p>
+    <h2>Measure your preparation.</h2>
+    <p class="muted">Open skill practice and estimate Listening and Reading band scores.</p>
+  </div>
+  <div class="skills-grid">
+    <button class="skill-card" data-go="listening"><i>♫</i><b>Listening practice</b><small>4 sections · audio and answers</small><em>Open →</em></button>
+    <button class="skill-card" data-go="reading"><i>▤</i><b>Reading practice</b><small>Academic passages and questions</small><em>Open →</em></button>
+    <button class="skill-card" data-go="writing"><i>✎</i><b>Writing practice</b><small>Task 1 and Task 2</small><em>Open →</em></button>
+    <button class="skill-card" data-go="speaking"><i>◉</i><b>Speaking practice</b><small>Three-part speaking practice</small><em>Open →</em></button>
+  </div>
+  <div class="panel calculator">
+    <h3>IELTS Band Calculator</h3>
+    <p class="muted">Enter the number of correct answers out of 40.</p>
+    <div class="calculator-grid">
+      <label>Listening correct answers<input type="number" id="listeningScore" min="0" max="40" placeholder="0–40"></label>
+      <label>Academic Reading correct answers<input type="number" id="readingScore" min="0" max="40" placeholder="0–40"></label>
+    </div>
+    <button class="primary-btn" id="calculateBand">Calculate bands</button>
+    <div id="bandResult" class="band-result"></div>
+    <p class="muted tiny">Approximate guide only. Official conversion can vary between test versions.</p>
+  </div>
+</section>
+
+<!-- FOCUS TIMER -->
+<section class="page" id="focus">
+  <div class="page-intro">
+    <p class="eyebrow">STUDY PRODUCTIVITY</p>
+    <h2>Focus on your goal.</h2>
+    <p class="muted">Use focused study sessions and short breaks.</p>
+  </div>
+  <div class="panel focus-panel">
+    <p class="eyebrow">POMODORO TIMER</p>
+    <div class="timer-display big" id="focusClock">25:00</div>
+    <div class="focus-modes">
+      <button class="tab active" data-minutes="25">Focus 25m</button>
+      <button class="tab" data-minutes="5">Short break 5m</button>
+      <button class="tab" data-minutes="15">Long break 15m</button>
+    </div>
+    <div class="action-row center">
+      <button class="primary-btn" id="focusStart">Start</button>
+      <button class="secondary-btn" id="focusReset">Reset</button>
+    </div>
+    <p class="muted center" id="focusStatus">Ready for your next focused session.</p>
+  </div>
+</section>
+
+<!-- PROGRESS -->
+<section class="page" id="progress">
+  <div class="page-intro">
+    <p class="eyebrow">YOUR JOURNEY</p>
+    <h2>Progress overview.</h2>
+    <p class="muted">Your activity is stored locally in this browser.</p>
+  </div>
+  <div class="stats-grid">
+    <div class="stat-card"><span>Words learned</span><strong id="progressWords">0</strong></div>
+    <div class="stat-card"><span>Speaking questions</span><strong id="progressQuestions">0</strong></div>
+    <div class="stat-card"><span>Tests completed</span><strong id="progressTests">0</strong></div>
+    <div class="stat-card"><span>Saved answers</span><strong id="progressAnswers">0</strong></div>
+  </div>
+  <div class="panel">
+    <h3>Preparation advice</h3>
+    <p class="muted">Practise all four skills regularly. Review incorrect answers, learn vocabulary in context, and complete timed exercises. A practice score is not an official IELTS result.</p>
+  </div>
+</section>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-line"></div>
+  <b>IELTS<span>PRO</span></b>
+  <p>Designed and developed by <strong>Mirjalol Ortiqboyev</strong></p>
+  <small>© 2026 IELTS PRO · Built for IELTS learners</small>
+</footer>
+</main>
+</div>
+
+<div class="toast" id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
